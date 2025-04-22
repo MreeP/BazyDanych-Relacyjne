@@ -16,8 +16,8 @@
         "graham-campbell/markdown": "^16.0",
         "laravel/framework": "^12.1.1",
         "laravel/jetstream": "^5.3.5",
+        "laravel/sail": "^1.41.0",
         "laravel/sanctum": "^4.0.8",
-        "laravel/telescope": "^5.5",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6.1",
         "predis/predis": "^2.3",
@@ -30,7 +30,6 @@
         "fakerphp/faker": "^1.24.1",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.21.0",
-        "laravel/sail": "^1.41.0",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.6.1",
         "phpunit/phpunit": "^11.5.12"
