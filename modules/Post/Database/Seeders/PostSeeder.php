@@ -39,19 +39,28 @@ class PostSeeder extends Seeder
             // Add comments and likes to each post
             $posts->each(function ($post) use ($customers) {
                 // Add 0-5 comments per post
+                $createdAt = now()->subDays(rand(0, $post->created_at->diffInDays()));
+
                 $comments = Comment::factory(rand(0, 5))->create([
                     'post_id' => $post->id,
                     'customer_id' => $customers->random()->id,
+                    'created_at' => $createdAt,
+                    'updated_at' => $createdAt,
                 ]);
 
                 // Add replies to some comments
                 $comments->each(function ($comment) use ($customers, $post) {
                     // 50% chance to have replies
                     if (rand(0, 1)) {
+
+                        $createdAt = now()->subDays(rand(0, $comment->created_at->diffInDays()));
+
                         Comment::factory(rand(1, 3))->create([
                             'post_id' => $post->id,
                             'parent_id' => $comment->id,
                             'customer_id' => $customers->random()->id,
+                            'created_at' => $createdAt,
+                            'updated_at' => $createdAt,
                         ]);
                     }
                 });
@@ -61,10 +70,14 @@ class PostSeeder extends Seeder
                 $likedCustomers = $customers->random($likeCount);
 
                 foreach ($likedCustomers as $likedCustomer) {
+                    $createdAt = now()->subDays(rand(0, $post->created_at->diffInDays()));
+
                     Like::factory()->create([
                         'customer_id' => $likedCustomer->id,
                         'likeable_id' => $post->id,
                         'likeable_type' => Post::class,
+                        'created_at' => $createdAt,
+                        'updated_at' => $createdAt,
                     ]);
                 }
 
@@ -76,10 +89,14 @@ class PostSeeder extends Seeder
                         $likedCustomers = $customers->random($likeCount);
 
                         foreach ($likedCustomers as $likedCustomer) {
+                            $createdAt = now()->subDays(rand(0, $comment->created_at->diffInDays()));
+
                             Like::factory()->create([
                                 'customer_id' => $likedCustomer->id,
                                 'likeable_id' => $comment->id,
                                 'likeable_type' => Comment::class,
+                                'created_at' => $createdAt,
+                                'updated_at' => $createdAt,
                             ]);
                         }
                     }

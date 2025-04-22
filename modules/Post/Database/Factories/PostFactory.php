@@ -3,6 +3,7 @@
 namespace Modules\Post\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Modules\Customer\Models\Customer;
 use Modules\Post\Models\Post;
 
@@ -27,13 +28,16 @@ class PostFactory extends Factory
     public function definition(): array
     {
         $title = fake()->sentence();
-        
+        $createdAt = fake()->dateTimeBetween('-10 days');
+
         return [
             'title' => $title,
-            'slug' => \Illuminate\Support\Str::slug($title),
+            'slug' => Str::slug($title),
             'content' => fake()->paragraphs(3, true),
             'customer_id' => Customer::factory(),
-            'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
+            'published_at' => fake()->dateTimeBetween('-1 year'),
+            'created_at' => $createdAt,
+            'updated_at' => $createdAt,
         ];
     }
 

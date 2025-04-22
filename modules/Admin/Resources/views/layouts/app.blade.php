@@ -14,6 +14,8 @@
         <!-- Scripts -->
         @vite('resources/js/app.js')
 
+        @stack('scripts')
+
         <!-- Styles -->
         @livewireStyles
         @vite('resources/css/app.css')

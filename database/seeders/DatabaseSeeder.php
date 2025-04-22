@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Modules\Admin\Database\Seeders\AdminSeeder;
 use Modules\Customer\Database\Seeder\CustomerSeeder;
-use Modules\Guide\Database\Seeder\GuideSeeder;
 use Modules\Post\Database\Seeders\PostSeeder;
 
 /**
