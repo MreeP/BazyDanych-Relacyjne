@@ -12,6 +12,6 @@ return [
     |
     */
 
-    'admin_prefix' => env('AUTH_ADMIN_PREFIX', '5765ACE7-278D-42D4-8B68-2320281BB6F8'),
+    'admin_prefix' => env('AUTH_ADMIN_PREFIX', 'admin'),
 
 ];

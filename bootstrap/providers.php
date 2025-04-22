@@ -7,4 +7,5 @@ return [
     App\Providers\TelescopeServiceProvider::class,
     Modules\Admin\Providers\AdminServiceProvider::class,
     Modules\Customer\Providers\CustomerServiceProvider::class,
+    Modules\Post\Providers\PostServiceProvider::class,
 ];
