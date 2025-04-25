@@ -2,9 +2,9 @@
 
 ## Spis treści
 
-1. [Instalacja](install.md)
-2. [Baza danych](database.md)
-3. [Bezpieczeństwo](security.md)
+1. [Instalacja](project/install.md)
+2. [Baza danych](project/database.md)
+3. [Bezpieczeństwo](project/security.md)
 
 ## Wprowadzenie
 
@@ -32,19 +32,19 @@ System oferuje następujące główne funkcjonalności:
 - Zarządzanie profilem użytkownika
 
 
-![login.png](screenshots/login.png)
+![login.png](project/screenshots/login.png)
 
-![customer_create_post.png](screenshots/customer_create_post.png)
+![customer_create_post.png](project/screenshots/customer_create_post.png)
 
-![customer_post.png](screenshots/customer_post.png)
+![customer_post.png](project/screenshots/customer_post.png)
 
-![customer_edit_post.png](screenshots/customer_edit_post.png)
+![customer_edit_post.png](project/screenshots/customer_edit_post.png)
 
-![customer_posts.png](screenshots/customer_posts.png)
+![customer_posts.png](project/screenshots/customer_posts.png)
 
-![customer_own_posts.png](screenshots/customer_own_posts.png)
+![customer_own_posts.png](project/screenshots/customer_own_posts.png)
 
-![customer_profile.png](screenshots/customer_profile.png)
+![customer_profile.png](project/screenshots/customer_profile.png)
 
 ### Dla administratorów
 
@@ -54,12 +54,12 @@ System oferuje następujące główne funkcjonalności:
 - Zarządzanie profilem administratora
 
 
-![admin_dashboard.png](screenshots/admin_dashboard.png)
+![admin_dashboard.png](project/screenshots/admin_dashboard.png)
 
-![admin_posts.png](screenshots/admin_posts.png)
+![admin_posts.png](project/screenshots/admin_posts.png)
 
-![admin_post.png](screenshots/admin_post.png)
+![admin_post.png](project/screenshots/admin_post.png)
 
-![admin_edit_post.png](screenshots/admin_edit_post.png)
+![admin_edit_post.png](project/screenshots/admin_edit_post.png)
 
-![admin_profile.png](screenshots/admin_profile.png)
+![admin_profile.png](project/screenshots/admin_profile.png)
