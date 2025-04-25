@@ -1,4 +1,6 @@
-# Dokumentacja Techniczna Projektu Kajetan Kucharski 279474
+# Dokumentacja Techniczna Projektu
+
+## System zarządzania relacyjną bazą danych - Kajetan Kucharski 279474
 
 ## Spis treści
 
@@ -9,17 +11,42 @@
 5. [Baza danych](#baza-danych)
 6. [Zabezpieczenia i ochrona przed atakami](#zabezpieczenia-i-ochrona-przed-atakami)
 
-# Wprowadzenie
+# Wprowadznie
 
 Niniejsza dokumentacja zawiera szczegółowe informacje dotyczące systemu.
 
+System został wykonany w języku PHP 8.3 z wykorzystaniem frameworka Laravel 12 oraz bazy danych PostgreSQL 16.
+
+Laravel to nowoczesny framework PHP, który wspiera budowanie aplikacji webowych w sposób wydajny, przejrzysty i skalowalny, korzystając z architektury MVC (Model-View-Controller).
+
 # Struktura systemu
+
+## Moduły
 
 System składa się z następujących modułów:
 
-- **Moduł Admin** - zarządzanie systemem przez administratorów
-- **Moduł Customer** - funkcjonalności dla użytkowników końcowych
-- **Moduł Post** - zarządzanie postami i komentarzami
+-   **Moduł Admin** – umożliwia administratorom zarządzanie systemem, w tym użytkownikami, treściami oraz konfiguracją.
+-   **Moduł Customer** – zawiera funkcjonalności dostępne dla użytkowników końcowych, takie jak rejestracja, logowanie, przeglądanie treści oraz interakcja z postami.
+-   **Moduł Post** – odpowiedzialny za zarządzanie postami i komentarzami, w tym ich tworzenie, edycję, usuwanie oraz wyświetlanie.
+
+## Architektura systemu
+
+System został zbudowany w oparciu o wzorzec **MVC (Model-View-Controller)**:
+
+-   **Model** – warstwa odpowiedzialna za logikę aplikacji oraz komunikację z bazą danych. Modele reprezentują dane oraz reguły ich przetwarzania.
+-   **View** – warstwa odpowiedzialna za prezentację danych użytkownikowi. Widoki są tworzone z użyciem silnika szablonów Blade, który ułatwia łączenie HTML z danymi z kontrolerów.
+-   **Controller** – warstwa pośrednicząca między modelem a widokiem. Kontrolery przetwarzają żądania HTTP, pobierają dane z modeli i przekazują je do odpowiednich widoków.
+
+## Eloquent ORM (Object-relational mapping)
+
+Laravel korzysta z wbudowanego ORM-u o nazwie **Eloquent**, który umożliwia łatwą i czytelną pracę z bazą danych w sposób obiektowy. Główne cechy Eloquent:
+
+-   Każdy model odpowiada jednej tabeli w bazie danych.
+-   Relacje między tabelami są definiowane jako metody w klasach modeli (np. `hasMany`, `belongsTo`, `hasOne`).
+-   Obsługa migracji, które pozwalają na wersjonowanie struktury bazy danych.
+-   Obsługa zapytań przez fluent API (np. `Post::where('published_at', '<=', now())->get()` zamieniane następnie na zapytanie SQL `SELECT * FROM posts WHERE published_at <= '2021-01-01'`).
+
+Dzięki Eloquent ORM tworzenie, aktualizacja oraz pobieranie danych z bazy odbywa się w sposób szybki, bez konieczności pisania surowych zapytań SQL, co znacząco skraca czas tworzenia i utrzymania aplikacji. Korzystanie z gotowego rozwiązania pozwala również zminimalizować zagrożenia wynikajace z ataków SQL injection.
 
 # Funkcjonalności
 
@@ -34,19 +61,19 @@ System oferuje następujące główne funkcjonalności:
 - Polubienia postów i komentarzy
 - Zarządzanie profilem użytkownika
 
-![login.png](project/screenshots/login.png)
+![login.png](screenshots/login.png)
 
-![customer_create_post.png](project/screenshots/customer_create_post.png)
+![customer_create_post.png](screenshots/customer_create_post.png)
 
-![customer_post.png](project/screenshots/customer_post.png)
+![customer_post.png](screenshots/customer_post.png)
 
-![customer_edit_post.png](project/screenshots/customer_edit_post.png)
+![customer_edit_post.png](screenshots/customer_edit_post.png)
 
-![customer_posts.png](project/screenshots/customer_posts.png)
+![customer_posts.png](screenshots/customer_posts.png)
 
-![customer_own_posts.png](project/screenshots/customer_own_posts.png)
+![customer_own_posts.png](screenshots/customer_own_posts.png)
 
-![customer_profile.png](project/screenshots/customer_profile.png)
+![customer_profile.png](screenshots/customer_profile.png)
 
 ### Dla administratorów
 
@@ -55,15 +82,15 @@ System oferuje następujące główne funkcjonalności:
 - Przeglądanie statystyk systemu
 - Zarządzanie profilem administratora
 
-![admin_dashboard.png](project/screenshots/admin_dashboard.png)
+![admin_dashboard.png](screenshots/admin_dashboard.png)
 
-![admin_posts.png](project/screenshots/admin_posts.png)
+![admin_posts.png](screenshots/admin_posts.png)
 
-![admin_post.png](project/screenshots/admin_post.png)
+![admin_post.png](screenshots/admin_post.png)
 
-![admin_edit_post.png](project/screenshots/admin_edit_post.png)
+![admin_edit_post.png](screenshots/admin_edit_post.png)
 
-![admin_profile.png](project/screenshots/admin_profile.png)
+![admin_profile.png](screenshots/admin_profile.png)
 
 # Instalacja
 

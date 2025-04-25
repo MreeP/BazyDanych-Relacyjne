@@ -23,7 +23,7 @@
             <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                 <div class="mx-auto w-full max-w-sm lg:w-96 space-y-6">
                     <div>
-                        <img class="h-10 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+                        <img class="h-10 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
                         <x-texts.headers.header-2 :text="$header" />
 
                         @if(\Illuminate\Support\Facades\Session::has(\Modules\Customer\View\Components\AuthLayout::SESSION_STATUS))
